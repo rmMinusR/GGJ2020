@@ -8,7 +8,7 @@ public class ProgressMonitor : MonoBehaviour
     public static bool[] progress;
     private static bool hasBeenInitialized = false;
 
-    public GameObject[] objectivePieces;
+    public ProgressIndicator[] objectivePieces;
 
     public GameObject completionMessage;
 
@@ -44,7 +44,7 @@ public class ProgressMonitor : MonoBehaviour
         bool isComplete = true;
         for (int i = 0; i < objectivePieces.Length; i++)
         {
-            objectivePieces[i].SetActive(progress[i]);
+            objectivePieces[i].SetState(progress[i]);
             if (!progress[i]) isComplete = false;
         }
 
