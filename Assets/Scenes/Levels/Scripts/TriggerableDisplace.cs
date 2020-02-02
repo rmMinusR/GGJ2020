@@ -16,7 +16,7 @@ public class TriggerableDisplace : ITriggerSubscriber
     void Start()
     {
         startingPosition = door.transform.position;
-        animationProgress = 0;
+        animationProgress = 1;
     }
 
     void Update()
