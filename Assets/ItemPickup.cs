@@ -9,6 +9,8 @@ public class ItemPickup : IObjective
 
     public LevelStateManager levelStateManager;
 
+    public int shipPartID = -1;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (HasCompleted()) return;
@@ -16,6 +18,9 @@ public class ItemPickup : IObjective
         if (other.gameObject.tag == "Player")
         {
             renderObject.SetActive(false);
+
+            ProgressMonitor.EnsureInitialized();
+            if (shipPartID >= 0) ProgressMonitor.progress[shipPartID] = true;
         }
     }
 

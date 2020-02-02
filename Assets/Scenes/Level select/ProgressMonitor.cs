@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +14,24 @@ public class ProgressMonitor : MonoBehaviour
 
     private void Start()
     {
-        if(!hasBeenInitialized)
+        if (FindObjectsOfType<ProgressMonitor>().Length > 1)
+        {
+            DestroyImmediate(gameObject);
+        }
+        else
         {
             progress = new bool[objectivePieces.Length];
-            for(int i = 0; i < objectivePieces.Length; i++)
+            DontDestroyOnLoad(this);
+        }
+
+        EnsureInitialized();
+    }
+
+    public static void EnsureInitialized()
+    {
+        if (!hasBeenInitialized)
+        {
+            for (int i = 0; i < progress.Length; i++)
             {
                 progress[i] = false;
             }
