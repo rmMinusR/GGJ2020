@@ -19,6 +19,8 @@ public class ItemPickup : IObjective
         {
             renderObject.SetActive(false);
 
+            DoChatter();
+
             ProgressMonitor.EnsureInitialized();
             if (shipPartID >= 0) ProgressMonitor.progress[shipPartID] = true;
         }
@@ -27,5 +29,13 @@ public class ItemPickup : IObjective
     public override bool HasCompleted()
     {
         return ! renderObject.activeInHierarchy;
+    }
+
+    public void DoChatter()
+    {
+        foreach (ITriggerSubscriber sub in Object.FindObjectsOfType<ITriggerSubscriber>())
+        {
+            if (sub.trigger == null) sub.OnTriggerChange(null);
+        }
     }
 }

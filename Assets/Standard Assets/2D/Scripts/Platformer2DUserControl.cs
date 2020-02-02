@@ -5,6 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 namespace UnityStandardAssets._2D
 {
     [RequireComponent(typeof (PlatformerCharacter2D))]
+    [RequireComponent(typeof (AudioSource))]
     public class Platformer2DUserControl : MonoBehaviour
     {
         private PlatformerCharacter2D m_Character;
@@ -13,6 +14,8 @@ namespace UnityStandardAssets._2D
         public string xAxis = "Horizontal";
         public string yAxis = "Vertical";
         public string jumpAxis = "Jump";
+
+        public AudioSource jumpSound;
 
         private void Awake()
         {
@@ -26,6 +29,7 @@ namespace UnityStandardAssets._2D
             {
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown(jumpAxis);
+                if (m_Jump) jumpSound.Play();
             }
         }
 
