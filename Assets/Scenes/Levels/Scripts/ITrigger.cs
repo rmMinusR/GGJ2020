@@ -8,7 +8,7 @@ public abstract class ITrigger : MonoBehaviour
     {
         foreach(ITriggerSubscriber sub in Object.FindObjectsOfType<ITriggerSubscriber>())
         {
-            if(sub.trigger == this) sub.OnTriggerChange();
+            if (sub.trigger == this || sub.trigger == null) sub.OnTriggerChange(this);
         }
     }
 

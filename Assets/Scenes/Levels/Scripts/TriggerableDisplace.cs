@@ -36,7 +36,7 @@ public class TriggerableDisplace : ITriggerSubscriber
         door.transform.position = startingPosition + displacement * slideOpenAnimation.Evaluate(1-animationProgress);
     }
 
-    public override void OnTriggerChange()
+    public override void OnTriggerChange(ITrigger t)
     {
         //Blank, unused
     }

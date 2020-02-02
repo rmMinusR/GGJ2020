@@ -5,5 +5,5 @@ using UnityEngine;
 public abstract class ITriggerSubscriber : MonoBehaviour {
     public ITrigger trigger;
 
-    public abstract void OnTriggerChange();
+    public abstract void OnTriggerChange(ITrigger t);
 }

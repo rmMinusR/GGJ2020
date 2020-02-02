@@ -6,7 +6,7 @@ public class TriggerableVanish : ITriggerSubscriber
 {
     public GameObject door;
 
-    public override void OnTriggerChange()
+    public override void OnTriggerChange(ITrigger t)
     {
         door.SetActive(trigger.GetState());
     }
