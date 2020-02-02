@@ -33,7 +33,7 @@ namespace UnityStandardAssets._2D
         private void FixedUpdate()
         {
             // Read the inputs.
-            bool crouch = CrossPlatformInputManager.GetAxis(yAxis) < -0.1f;
+            bool crouch = false;// CrossPlatformInputManager.GetAxis(yAxis) < -0.1f;
             float h = CrossPlatformInputManager.GetAxis(xAxis);
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
