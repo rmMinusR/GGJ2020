@@ -31,8 +31,3 @@ public class TriggerableSoundPlayer : ITriggerSubscriber
         }
     }
 }
-
-public enum TriggerMode
-{
-    RISING, FALLING, ANY
-}

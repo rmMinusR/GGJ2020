@@ -7,3 +7,8 @@ public abstract class ITriggerSubscriber : MonoBehaviour {
 
     public abstract void OnTriggerChange(ITrigger t);
 }
+
+public enum TriggerMode
+{
+    RISING, FALLING, ANY
+}
