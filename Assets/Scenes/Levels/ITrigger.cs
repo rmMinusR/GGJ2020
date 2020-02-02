@@ -4,11 +4,11 @@ using UnityEngine;
 
 public abstract class ITrigger : MonoBehaviour
 {
-    private void BroadcastChange()
+    protected void DoBroadcastChange()
     {
         foreach(ITriggerSubscriber sub in Object.FindObjectsOfType<ITriggerSubscriber>())
         {
-
+            if(sub.trigger == this) sub.OnTriggerChange();
         }
     }
 
