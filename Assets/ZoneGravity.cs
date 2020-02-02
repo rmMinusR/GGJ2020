@@ -14,8 +14,12 @@ public class ZoneGravity : MonoBehaviour
     [Tooltip("Gravity to replace this with")]
     public Vector2 gravity;
 
+    void Update() {} //Exists only for the checkbox
+
     void OnTriggerStay2D(Collider2D other)
     {
+        if (!gameObject.activeInHierarchy) return;
+
         //Position of this object, in 2d
         Vector2 pos2d = new Vector2(transform.position.x, transform.position.y);
 

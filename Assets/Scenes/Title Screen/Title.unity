@@ -1089,9 +1089,6 @@ MonoBehaviour:
   - {fileID: 276163230}
   - {fileID: 723729812}
   crossfadeTime: 1
-  fadeFrom: {fileID: 0}
-  fadeTo: {fileID: 0}
-  fadeAmount: 0
 --- !u!1 &665267571
 GameObject:
   m_ObjectHideFlags: 0
