@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2382665184051725657}
   - component: {fileID: 2382665184051725658}
   - component: {fileID: 2382665184051725659}
-  - component: {fileID: 2382665184051725652}
+  - component: {fileID: 4622873322851717142}
   - component: {fileID: 2382665184051725653}
   m_Layer: 0
   m_Name: Player 1
@@ -195,8 +195,8 @@ MonoBehaviour:
   xAxis: Horizontal1
   yAxis: Vertical1
   jumpAxis: Jump1
---- !u!61 &2382665184051725652
-BoxCollider2D:
+--- !u!70 &4622873322851717142
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -209,18 +209,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.5, y: 10.6}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.5, y: 9.5}
-  m_EdgeRadius: 0
+  m_Size: {x: 5.4999995, y: 10.599999}
+  m_Direction: 0
 --- !u!114 &2382665184051725653
 MonoBehaviour:
   m_ObjectHideFlags: 0
